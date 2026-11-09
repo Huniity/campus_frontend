@@ -1,0 +1,35 @@
+{
+  "name": "Campus Frontend - Azure Static Web App",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:26-bookworm",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/bun:1": {},
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {}
+  },
+  "customizations": {
+    "vscode": {
+    "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "js/ts.updateImportsOnFileMove.enabled": "always"
+    },
+    "extensions": [
+            "esbenp.prettier-vscode",
+            "dbaeumer.vscode-eslint",
+            "ms-azuretools.vscode-azureresourcegroups",
+            "ms-azuretools.vscode-azurefunctions",
+            "ms-azuretools.vscode-azuretools",
+            "ms-azuretools.vscode-azurestaticwebapps",
+            "ms-azuretools.vscode-azureappservice", 
+            "ms-azuretools.vscode-azurecontainerapps",
+            "hashicorp.terraform",
+            "redhat.vscode-yaml"
+        ]
+    }
+  },
+  "forwardPorts": [
+    5173
+  ],
+  "postCreateCommand": "if [ -f package.json ]; then bun install; fi"
+}
